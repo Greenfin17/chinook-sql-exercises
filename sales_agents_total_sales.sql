@@ -7,4 +7,4 @@ Customer as CM
 	join InvoiceLine as IL
 		on IL.InvoiceId = IV.InvoiceId
 group by EM.LastName, EM.FirstName, IL.Quantity
-order by EM.LastName
+order by [Total Sales] DESC

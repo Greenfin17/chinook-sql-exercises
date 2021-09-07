@@ -55,3 +55,28 @@ where ArtistId not in(
 			on al.AlbumId = t.AlbumId
 )
 
+-- Artists who don't have albums.
+select ArtistId
+from Artist a
+except
+select ArtistId
+from Album
+
+-- Artists who have albums
+select ArtistId
+from Artist a
+intersect
+select ArtistId
+from Album
+
+select left(FirstName,1)
+from Customer 
+except
+select left(FirstName,1)
+from Employee
+
+select left(FirstName,1)
+from Customer 
+union
+select left(FirstName,1)
+from Employee
